@@ -1,0 +1,28 @@
+#!/user/bin/env node 
+'use strict'
+
+// 定义脚手架的文件路径
+process.env.NODE_PATH = __dirname + '/../node_modules'
+
+const program = require('commander')
+const init = require('../command/init')
+
+program.version(require('../package').version)
+
+// 定义使用方法
+program.usage('<command>')
+
+program
+  .command('init <templateName> <dirName>')
+  .description('Generate a new project')
+  .alias('i')
+  .action((templateName, dirName) => {
+    init(templateName, dirName)
+  })
+
+
+program.parse(process.argv)
+
+if(!program.args.length){
+  program.help()
+}
