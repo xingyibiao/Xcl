@@ -7,7 +7,7 @@
 'use strict'
 
 const download = require('download-git-repo')
-const WEBPACKURL = 'xingyibiao/webpack'
+const WEBPACKURL = 'xingyibiao/webpack-multiple-page'
 
 module.exports = (templateName, dirName) => {
   switch (templateName) {
